@@ -1,4 +1,4 @@
 {
-    "bucket_name": "hardware_data_connector_bucket",
+    "bucket_name": "serverless-fastapi-lambda-dev9",
     "tenant_name": "testTenant"
 }

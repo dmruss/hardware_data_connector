@@ -1,14 +1,13 @@
 import boto3
 import logging
 import json
-import datetime
 
 
 class AWSUtils:
 
     def __init__(self):
         self.s3 = boto3.client('s3')
-        with open('config.json', 'r') as f:
+        with open('./src/config.json', 'r') as f:
             contents = json.load(f)
             self.bucket_name = contents['bucket_name']
             self.tenant_name = contents['tenant_name']

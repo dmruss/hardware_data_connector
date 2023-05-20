@@ -8,22 +8,25 @@ class LocalFiles:
 
     @staticmethod
     def save_var_temp_file(data):
-        if type(data) == dict:
-            #json
-            filename = str(int(datetime.datetime.now().timestamp()))
-            temp = tempfile.NamedTemporaryFile(prefix = filename, suffix='.json', delete=False)
-            temp.close()
-            print(temp.name)
-            with open(temp.name, 'w') as f:
-                f.write(json.dumps(data))
+        try:
+            if type(data) == dict:
+                #json
+                filename = str(int(datetime.datetime.now().timestamp()))
+                temp = tempfile.NamedTemporaryFile(prefix = filename, suffix='.json', delete=False)
+                temp.close()
+                print(temp.name)
+                with open(temp.name, 'w') as f:
+                    f.write(json.dumps(data))
 
-            with open(temp.name, 'r') as f:
-                print(f.read())
+                with open(temp.name, 'r') as f:
+                    print(f.read())
 
-            return temp.name
-        if type(data) == list:
-            #csv
-            return
+                return temp.name, filename + '.json'
+            if type(data) == list:
+                #csv
+                return
+        except Exception as e:
+            logging.error(str(e))
 
     @staticmethod
     def delete_temp_file(temp_path):
