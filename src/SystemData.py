@@ -1,5 +1,5 @@
 import psutil
-
+import datetime
 
 class SystemData:
 
@@ -13,6 +13,7 @@ class SystemData:
         output.update(cpu)
         output.update(mem)
         output['pid_count'] = pids
+        output['timestamp'] = datetime.datetime.now().timestamp()
 
         return output
         
@@ -43,3 +44,10 @@ class SystemData:
         pids = psutil.pids()
         num_pids = len(pids)
         return num_pids
+    
+    @staticmethod
+    def add_tenant_name(data, tenant_name) -> dict:
+        data['tenant'] = tenant_name
+        return data
+    
+    
