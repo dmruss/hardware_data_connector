@@ -1,6 +1,0 @@
-{
-    "bucket_name": "serverless-fastapi-lambda-dev9",
-    "tenant_name": "testTenant",
-    "app_folder": "hardware-data",
-    "kinesis_stream": "stream1"
-}
