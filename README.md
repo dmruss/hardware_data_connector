@@ -5,8 +5,12 @@ This is a tool to record hardware measurements.  The data is collected using the
 The fields currently recorded are:
 ```
 {
-    user time: ,
-    
+    user time: time spent by normal processes executing in user mode,
+    system time:  time spent by processes executing in kernel mode,
+    idle time: time spent doing nothing,
+    available memory: the memory that can be given instantly to processes without the system going into swap,
+    used memory:  memory used,
+    process count: number of currently running processes 
 }
 ```
 
