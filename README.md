@@ -15,4 +15,8 @@ The fields currently recorded are:
 ```
 
 ## Setup
+A setup prereq is to have either an s3 bucket created or a kinesis data stream created in AWS.  This must also include an IAM role with the ability to write to either resource you have chosen to use.  The terminal you are using to run this script must be authenticated using that IAM role.
+Update the config file to include the bucket name or data stream name, and your tenant name.
 
+## Run
+In the authenticated terminal run the main script with the kinesis or s3 parameter.
